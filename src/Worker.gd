@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const Speed = 100
+const Speed = 300
 
 var is_moving = false
 var step_delay = 0
