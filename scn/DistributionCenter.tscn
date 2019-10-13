@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/ItemPlacer.gd" type="Script" id=1]
 [ext_resource path="res://img/metalRounded.png" type="Texture" id=2]
@@ -18,14 +18,15 @@
 [ext_resource path="res://scn/OrderTerminal.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scn/ConveyorBelt.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scn/Shelf.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scn/Worker.tscn" type="PackedScene" id=19]
-[ext_resource path="res://img/black.png" type="Texture" id=20]
-[ext_resource path="res://img/terminal_large.png" type="Texture" id=21]
-[ext_resource path="res://src/Slidedown Menu.gd" type="Script" id=22]
-[ext_resource path="res://aud/new_order_in.ogg" type="AudioStream" id=23]
-[ext_resource path="res://img/large_bin.png" type="Texture" id=24]
-[ext_resource path="res://scn/BinContentsMenu.gd" type="Script" id=25]
-[ext_resource path="res://scn/Inventory.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scn/Box.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scn/Worker.tscn" type="PackedScene" id=20]
+[ext_resource path="res://img/black.png" type="Texture" id=21]
+[ext_resource path="res://img/terminal_large.png" type="Texture" id=22]
+[ext_resource path="res://src/Slidedown Menu.gd" type="Script" id=23]
+[ext_resource path="res://aud/new_order_in.ogg" type="AudioStream" id=24]
+[ext_resource path="res://img/large_bin.png" type="Texture" id=25]
+[ext_resource path="res://scn/BinContentsMenu.gd" type="Script" id=26]
+[ext_resource path="res://scn/Inventory.tscn" type="PackedScene" id=27]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
@@ -232,7 +233,10 @@ position = Vector2( 1110, 1050 )
 [node name="Shelf_F" parent="." instance=ExtResource( 18 )]
 position = Vector2( 1120, 1330.53 )
 
-[node name="Worker" parent="." instance=ExtResource( 19 )]
+[node name="Box" parent="." instance=ExtResource( 19 )]
+position = Vector2( -40, 600 )
+
+[node name="Worker" parent="." instance=ExtResource( 20 )]
 position = Vector2( 240, 340 )
 
 [node name="Mask" type="Node2D" parent="."]
@@ -241,27 +245,27 @@ editor/display_folded = true
 [node name="Darkness" type="Sprite" parent="Mask"]
 position = Vector2( 1230, -500 )
 scale = Vector2( 4000, 500 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="Darkness2" type="Sprite" parent="Mask"]
 position = Vector2( 1330, 2050 )
 scale = Vector2( 4000, 500 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="Darkness4" type="Sprite" parent="Mask"]
 position = Vector2( -110, 1490 )
 scale = Vector2( 1500, 1500 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="Darkness5" type="Sprite" parent="Mask"]
 position = Vector2( 3090, 680 )
 scale = Vector2( 500, 3000 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="Darkness6" type="Sprite" parent="Mask"]
 position = Vector2( -580, 750 )
 scale = Vector2( 500, 3000 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="TileMapWalls" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -278,15 +282,15 @@ transform = Transform2D( 0.25, 0, 0, 0.25, 0, 0 )
 [node name="Slidedown Menu" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 2040, -1240 )
 scale = Vector2( 7.28, 6 )
-texture = ExtResource( 21 )
-script = ExtResource( 22 )
+texture = ExtResource( 22 )
+script = ExtResource( 23 )
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Slidedown Menu"]
 wait_time = 4.0
 autostart = true
 
 [node name="OrderUpSound" type="AudioStreamPlayer" parent="CanvasLayer/Slidedown Menu"]
-stream = ExtResource( 23 )
+stream = ExtResource( 24 )
 volume_db = -22.63
 
 [node name="HUDTween" type="Tween" parent="CanvasLayer"]
@@ -294,8 +298,8 @@ volume_db = -22.63
 [node name="BinContentsMenu" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 2040, -1240 )
 scale = Vector2( 7.28, 6 )
-texture = ExtResource( 24 )
-script = ExtResource( 25 )
+texture = ExtResource( 25 )
+script = ExtResource( 26 )
 
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource( 26 )]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource( 27 )]
 [connection signal="timeout" from="CanvasLayer/Slidedown Menu/Timer" to="CanvasLayer/Slidedown Menu" method="_on_Timer_timeout"]

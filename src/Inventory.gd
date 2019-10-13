@@ -30,7 +30,6 @@ func try_remove_item(item_type):
 			item.set_desired_position(item.position + Vector2(icon_size, 0))
 			spent_items.append(item)
 			adjust_item_positions()
-			get_node("BoxUpSound").play()
 			return true
 	return false
 
