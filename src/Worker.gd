@@ -5,6 +5,7 @@ const Speed = 300
 onready var anim_player = get_node("AnimationPlayer")
 onready var spr = get_node("Sprite")
 onready var inventory = get_tree().get_root().find_node("Inventory", true, false)
+onready var orders = get_tree().get_root().find_node("Slidedown Menu", true, false)
 
 var is_moving = false
 var step_sounds
@@ -55,6 +56,20 @@ func _physics_process(delta):
 		if inventory_delay <= 0:
 			# You only get one for each time you hold it down
 			inventory_delay = 1000
-			inventory.add_item(touching_bin.item_type)
+			if do_i_need_this(touching_bin.item_type):
+				inventory.add_item(touching_bin.item_type)
+			else:
+				get_node("Huh").play()
 	else:
 		inventory_delay = pick_up_time
+
+func do_i_need_this(item):
+	for order in orders.line_items:
+		if order.type == item:
+			return true
+	return false
+	
+	
+	
+	
+	

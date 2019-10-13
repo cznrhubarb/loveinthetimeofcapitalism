@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/huh.ogg-2e66545dfabfeee4e81dfad72bc97f07.oggstr"
+
+[deps]
+
+source_file="res://aud/huh.ogg"
+dest_files=[ "res://.import/huh.ogg-2e66545dfabfeee4e81dfad72bc97f07.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
