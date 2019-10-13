@@ -36,6 +36,21 @@ position = Vector2( 10, -70 )
 [node name="Shelf" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1133.67, 50 )
 
+[node name="Shelf2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1133.67, 300 )
+
+[node name="Shelf3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1133.67, 600 )
+
+[node name="Shelf4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1133.67, 900 )
+
+[node name="Shelf5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1133.67, 1200 )
+
+[node name="Shelf6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1133.67, 1500 )
+
 [node name="Worker" parent="." instance=ExtResource( 4 )]
 position = Vector2( 240, 340 )
 
