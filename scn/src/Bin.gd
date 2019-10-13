@@ -32,13 +32,13 @@ func _on_Area2D_body_entered(body):
 	# Ignore the Wall's collision
 	if body == get_parent().get_node("Wall/StaticBody2D"):
 		return
-	tween.interpolate_property(menu, "position", position, on_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(menu, "position", off_screen_pos, on_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
 	# TODO call the menu's icon fill function
 	menu.fill_with_icon(item_type)
 	get_node("OutSound").play()
 
 func _on_Area2D_body_exited(body):
-	tween.interpolate_property(menu, "position", position, off_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(menu, "position", on_screen_pos, off_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
 	get_node("InSound").play()
