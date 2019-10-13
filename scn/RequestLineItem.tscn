@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/RequestLineItem.gd" type="Script" id=1]
 [ext_resource path="res://fnt/ConsoleFont.tres" type="DynamicFont" id=2]
-[ext_resource path="res://img/notebook_1f4d3.png" type="Texture" id=3]
+[ext_resource path="res://img/items/notebook.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fnt/consola.ttf"
