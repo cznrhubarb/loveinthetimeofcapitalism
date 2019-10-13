@@ -20,10 +20,10 @@ func _on_Area2D_body_entered(body):
 	
 	if body == get_node("StaticBody2D"):
 		return
-	tween.interpolate_property(menu, "position", off_screen_pos, on_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(menu, "position", position, on_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
 
 func _on_Area2D_body_exited(body):
 	print("exit")
-	tween.interpolate_property(menu, "position", on_screen_pos, off_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(menu, "position", position, off_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
