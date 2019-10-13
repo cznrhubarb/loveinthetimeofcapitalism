@@ -23,4 +23,4 @@ func create_order(icon, time):
 	line_items.append(line_item)
 
 func _on_Timer_timeout():
-	create_order("notebook", rand_range(60, 90))
+	create_order("hammer", rand_range(60, 90))

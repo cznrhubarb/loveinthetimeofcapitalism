@@ -9,7 +9,7 @@ func init(item_type, time):
 	time_remaining = time
 
 func _ready():
-	#get_node("Icon").texture = 
+	get_node("Icon").texture = load("res://img/items/" + type + ".png")
 	var placer = get_tree().get_root().find_node("ItemPlacer", true, false)
 	get_node("Aisle").text = placer.get_aisle(type)
 
