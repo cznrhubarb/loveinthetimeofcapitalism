@@ -7,7 +7,7 @@
 [ext_resource path="res://img/terminal_large.png" type="Texture" id=5]
 [ext_resource path="res://src/Slidedown Menu.gd" type="Script" id=6]
 [ext_resource path="res://aud/new_order_in.ogg" type="AudioStream" id=7]
-[ext_resource path="res://img/shieldGold.png" type="Texture" id=8]
+[ext_resource path="res://img/large_bin.png" type="Texture" id=8]
 [ext_resource path="res://scn/BinContentsMenu.gd" type="Script" id=9]
 [ext_resource path="res://scn/Inventory.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/ItemPlacer.gd" type="Script" id=11]
@@ -77,8 +77,8 @@ volume_db = -22.63
 [node name="HUDTween" type="Tween" parent="CanvasLayer"]
 
 [node name="BinContentsMenu" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 530, -400 )
-scale = Vector2( 11, 10 )
+position = Vector2( 2040, -1240 )
+scale = Vector2( 7.28, 6 )
 texture = ExtResource( 8 )
 script = ExtResource( 9 )
 

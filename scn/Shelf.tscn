@@ -19,21 +19,21 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Bin" parent="." instance=ExtResource( 2 )]
-position = Vector2( -34.0089, 77.0921 )
-scale = Vector2( 1.83118, 1.7682 )
+position = Vector2( -40, 70 )
+scale = Vector2( 2, 1.5 )
 
 [node name="Bin2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 293.521, 78.7073 )
-scale = Vector2( 1.83118, 1.7682 )
+position = Vector2( 300, 70.456 )
+scale = Vector2( 2, 1.5 )
 
 [node name="Bin3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 702.529, 77.0921 )
-scale = Vector2( 1.83118, 1.7682 )
+position = Vector2( 702.529, 70.304 )
+scale = Vector2( 2, 1.5 )
 
 [node name="Bin4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1110.89, 78.4628 )
-scale = Vector2( 1.83118, 1.7682 )
+position = Vector2( 1110.89, 70.152 )
+scale = Vector2( 2, 1.5 )
 
 [node name="Bin5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1452.4, 75.6604 )
-scale = Vector2( 1.83118, 1.7682 )
+position = Vector2( 1450, 70 )
+scale = Vector2( 2, 1.5 )
