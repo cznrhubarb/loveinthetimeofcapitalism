@@ -4,10 +4,15 @@ const Speed = 300
 
 onready var anim_player = get_node("AnimationPlayer")
 onready var spr = get_node("Sprite")
+onready var inventory = get_tree().get_root().find_node("Inventory", true, false)
+
 var is_moving = false
 var step_sounds
 var step_sound_one_is_next = true
 var step_delay = 0
+var pick_up_time = 1.5
+var inventory_delay = pick_up_time
+var touching_bin = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,3 +49,12 @@ func _physics_process(delta):
 			snd.play()
 	else:
 		anim_player.play("Idle")
+	
+	if touching_bin != null and Input.is_action_pressed("pick_up"):
+		inventory_delay -= delta
+		if inventory_delay <= 0:
+			# You only get one for each time you hold it down
+			inventory_delay = 1000
+			inventory.add_item(touching_bin.item_type)
+	else:
+		inventory_delay = pick_up_time

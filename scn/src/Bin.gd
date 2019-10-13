@@ -9,6 +9,7 @@ var item_type = ""
 
 onready var tween = get_tree().get_root().find_node("HUDTween", true, false)
 onready var menu = get_tree().get_root().find_node("BinContentsMenu", true, false)
+onready var worker = get_tree().get_root().find_node("Worker", true, false)
 # TODO find itemplacer node
 
 # Called when the node enters the scene tree for the first time.
@@ -37,8 +38,10 @@ func _on_Area2D_body_entered(body):
 	# TODO call the menu's icon fill function
 	menu.fill_with_icon(item_type)
 	get_node("OutSound").play()
+	worker.touching_bin = self
 
 func _on_Area2D_body_exited(body):
 	tween.interpolate_property(menu, "position", on_screen_pos, off_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
 	get_node("InSound").play()
+	worker.touching_bin = null
