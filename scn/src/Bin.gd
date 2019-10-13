@@ -3,31 +3,17 @@ extends Sprite
 var on_screen_pos = Vector2(2040, 1120)
 var off_screen_pos = Vector2(2040, -1280)
 
-# TODO set a local aisle id var
-var aisle_id = "A"
+var aisle_id = ""
 var item_type = ""
 
 onready var tween = get_tree().get_root().find_node("HUDTween", true, false)
 onready var menu = get_tree().get_root().find_node("BinContentsMenu", true, false)
 onready var worker = get_tree().get_root().find_node("Worker", true, false)
-# TODO find itemplacer node
+onready var item_placer = get_tree().get_root().find_node("ItemPlacer", true, false)
 
-# Called when the node enters the scene tree for the first time.
 func init(aisle):
-	# TODO call itemplacer method to retrieve bin contents
-	# item_type = itemplacer.place_random_item(aisle_id)
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-# TODO implement _input listener to add bin contents to inventory
-# func _input(event):
-#    if event.is_action_pressed("pickup_item"):
-#       inventory.add_item(item_type)
-
+	aisle_id = aisle
+	item_type = item_placer.place_random_item(aisle)
 
 func _on_Area2D_body_entered(body):
 	# Ignore the Wall's collision

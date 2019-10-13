@@ -1,18 +1,19 @@
 extends Sprite
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var old_sprites = []
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-# TODO fill_with_icon
 func fill_with_icon(icon_type):
-	print(icon_type)
-
+	print("Filling with " + icon_type)
+	for spr in old_sprites:
+		remove_child(spr)
+	
+	old_sprites = []
+	
+	for i in range(0, 40):
+		var icon = Sprite.new()
+		icon.texture = load("res://img/items/" + icon_type + ".png")
+		icon.position = Vector2(rand_range(-150, 150), rand_range(-175, 100))
+		icon.rotation = rand_range(0, 3.14159*2)
+		icon.scale = Vector2(0.35, 0.35)
+		add_child(icon)
+		old_sprites.push_back(icon)

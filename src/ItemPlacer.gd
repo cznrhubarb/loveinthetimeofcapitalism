@@ -36,6 +36,7 @@ var aisle_lookup = {}
 
 # Plan is that all bins will call this function in their _ready func and give the ItemPlacer their aisle name
 func place_random_item(put_in_this_aisle):
+	randomize()
 	var rand_index = randi() % item_list.size()
 	var item_name = item_list[rand_index]
 	aisle_lookup[item_name] = put_in_this_aisle
@@ -50,6 +51,4 @@ func get_aisle(item_type):
 
 func get_random_item():
 	var available_items = aisle_lookup.keys()
-	return "hammer"
-	# Below is the correct code, once the bins are placing their items inside
-	#return available_items[randi() % available_items.size()]
+	return available_items[randi() % available_items.size()]
