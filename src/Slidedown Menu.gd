@@ -1,21 +1,26 @@
 extends Sprite
 
-var line_items = []
-
+# more or less constants
+var items_per_column = 17
 var line_item_start_pos = Vector2(-230, -150)
+var column_width = 165
+var row_height = 20
+
+var line_items = []
 
 func create_order(icon, time):
 	var scn = load("res://scn/RequestLineItem.tscn")
 	var line_item = scn.instance()
-	line_item.time_remaining = time
+	line_item.init(icon, time)
+	
+	var column = line_items.size() / items_per_column
+	var row = line_items.size() % items_per_column
 	line_item.position = line_item_start_pos
-	line_item.position.y += 16 * line_items.size()
+	line_item.position.x += column_width * column
+	line_item.position.y += row_height * row
+	
 	add_child(line_item)
 	line_items.append(line_item)
-	
-	# three columns
-	# aisle
-	# overdue
 
 func _on_Timer_timeout():
-	create_order("notebook", 64)
+	create_order("notebook", rand_range(60, 90))
