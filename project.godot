@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Life in the Time of Capitalism"
+config/name="Love in the Time of Capitalism"
 run/main_scene="res://scn/DistributionCenter.tscn"
 config/icon="res://icon.png"
 

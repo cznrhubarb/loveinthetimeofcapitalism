@@ -14,11 +14,12 @@ font_data = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="TimeRemaining" type="RichTextLabel" parent="."]
-margin_left = 9.0
+margin_left = 15.0
 margin_top = -6.0
-margin_right = 76.0
-margin_bottom = 10.0
+margin_right = 236.0
+margin_bottom = 20.0
 custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.129412, 0.494118, 0.141176, 1 )
 text = "due in 4:32"
 
 [node name="Icon" type="Sprite" parent="."]

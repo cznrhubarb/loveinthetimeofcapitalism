@@ -3,6 +3,9 @@ extends Sprite
 onready var tween = get_tree().get_root().find_node("HUDTween", true, false)
 onready var menu = get_tree().get_root().find_node("Slidedown Menu", true, false)
 
+var on_screen_pos = Vector2(2040, 1120)
+var off_screen_pos = Vector2(2040, -1280)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -17,10 +20,10 @@ func _on_Area2D_body_entered(body):
 	
 	if body == get_node("StaticBody2D"):
 		return
-	tween.interpolate_property(menu, "position", Vector2(530, -400), Vector2(530, 200), .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(menu, "position", off_screen_pos, on_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
 
 func _on_Area2D_body_exited(body):
 	print("exit")
-	tween.interpolate_property(menu, "position", Vector2(530, 200), Vector2(530, -400), .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+	tween.interpolate_property(menu, "position", on_screen_pos, off_screen_pos, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()

@@ -4,7 +4,7 @@
 [ext_resource path="res://scn/OrderTerminal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scn/Shelf.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scn/Worker.tscn" type="PackedScene" id=4]
-[ext_resource path="res://img/platformIndustrial_046.png" type="Texture" id=5]
+[ext_resource path="res://img/terminal_large.png" type="Texture" id=5]
 [ext_resource path="res://src/Slidedown Menu.gd" type="Script" id=6]
 
 [sub_resource type="TileSet" id=1]
@@ -35,15 +35,15 @@ position = Vector2( 1135, 50 )
 scale = Vector2( 9.10526, 1.93765 )
 
 [node name="Worker" parent="." instance=ExtResource( 4 )]
-position = Vector2( 380, 300 )
+position = Vector2( 240, 340 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2( 0.25, 0.25 )
 transform = Transform2D( 0.25, 0, 0, 0.25, 0, 0 )
 
 [node name="Slidedown Menu" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 530, -400 )
-scale = Vector2( 11, 10 )
+position = Vector2( 2040, -1240 )
+scale = Vector2( 7.28, 6 )
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
 
