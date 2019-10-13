@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Worker.gd" type="Script" id=1]
 [ext_resource path="res://img/player.png" type="Texture" id=2]
+[ext_resource path="res://aud/child_step_one.ogg" type="AudioStream" id=3]
+[ext_resource path="res://aud/child_step_two.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27, 27 )
@@ -59,3 +61,9 @@ frame = 3
 root_node = NodePath("../Sprite")
 anims/Idle = SubResource( 2 )
 anims/Walk = SubResource( 3 )
+
+[node name="StepOne" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="StepTwo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
