@@ -15,6 +15,7 @@ func add_item(item):
 	items_held.push_front(icon)
 	add_child(icon)
 	adjust_item_positions()
+	get_node("PickUpSound").play()
 
 func adjust_item_positions():
 	for i in range(0, items_held.size()):
@@ -29,6 +30,7 @@ func try_remove_item(item_type):
 			item.set_desired_position(item.position + Vector2(icon_size, 0))
 			spent_items.append(item)
 			adjust_item_positions()
+			get_node("BoxUpSound").play()
 			return true
 	return false
 

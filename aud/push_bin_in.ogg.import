@@ -11,5 +11,5 @@ dest_files=[ "res://.import/push_bin_in.ogg-e79d75cf6113f35299c314681b2dcaf4.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

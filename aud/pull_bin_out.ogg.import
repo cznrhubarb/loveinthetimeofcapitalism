@@ -11,5 +11,5 @@ dest_files=[ "res://.import/pull_bin_out.ogg-f4b4226c2b259578df225d432d0d8053.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -33,7 +33,9 @@ func _on_Area2D_body_entered(body):
 	tween.start()
 	# TODO call the menu's icon fill function
 	menu.fill_with_icon(item_type)
+	get_node("OutSound").play()
 
 func _on_Area2D_body_exited(body):
 	tween.interpolate_property(menu, "position", Vector2(530, 200), Vector2(530, -400), .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 	tween.start()
+	get_node("InSound").play()

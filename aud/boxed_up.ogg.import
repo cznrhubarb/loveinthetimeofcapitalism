@@ -11,5 +11,5 @@ dest_files=[ "res://.import/boxed_up.ogg-23ff36fd973299418eb0388b3e3d9121.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

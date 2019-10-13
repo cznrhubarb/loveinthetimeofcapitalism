@@ -27,3 +27,4 @@ func create_order(icon, time):
 func _on_Timer_timeout():
 	randomize()
 	create_order(placer.get_random_item(), rand_range(60, 90))
+	get_node("OrderUpSound").play()
