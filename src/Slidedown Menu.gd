@@ -6,6 +6,8 @@ var line_item_start_pos = Vector2(-230, -150)
 var column_width = 165
 var row_height = 20
 
+onready var placer = get_tree().get_root().find_node("ItemPlacer", true, false)
+
 var line_items = []
 
 func create_order(icon, time):
@@ -23,4 +25,5 @@ func create_order(icon, time):
 	line_items.append(line_item)
 
 func _on_Timer_timeout():
-	create_order("hammer", rand_range(60, 90))
+	randomize()
+	create_order(placer.get_random_item(), rand_range(60, 90))

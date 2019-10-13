@@ -3,6 +3,7 @@ extends Node2D
 var time_remaining
 var type
 onready var label = get_node("TimeRemaining")
+onready var placer = get_tree().get_root().find_node("ItemPlacer", true, false)
 
 func init(item_type, time):
 	type = item_type
@@ -10,7 +11,6 @@ func init(item_type, time):
 
 func _ready():
 	get_node("Icon").texture = load("res://img/items/" + type + ".png")
-	var placer = get_tree().get_root().find_node("ItemPlacer", true, false)
 	get_node("Aisle").text = placer.get_aisle(type)
 
 func _process(delta):
