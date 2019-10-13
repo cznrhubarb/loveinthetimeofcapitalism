@@ -12,7 +12,7 @@ onready var menu = get_tree().get_root().find_node("BinContentsMenu", true, fals
 # TODO find itemplacer node
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func init(aisle):
 	# TODO call itemplacer method to retrieve bin contents
 	# item_type = itemplacer.place_random_item(aisle_id)
 	pass # Replace with function body.

@@ -210,22 +210,22 @@ position = Vector2( 10, -70 )
 [node name="ConveyorBelt" parent="." instance=ExtResource( 16 )]
 position = Vector2( -170, -430 )
 
-[node name="Shelf" parent="." instance=ExtResource( 17 )]
+[node name="Shelf_A" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1130, -60 )
 
-[node name="Shelf2" parent="." instance=ExtResource( 17 )]
+[node name="Shelf_B" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1120, 200 )
 
-[node name="Shelf3" parent="." instance=ExtResource( 17 )]
+[node name="Shelf_C" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1120, 490 )
 
-[node name="Shelf4" parent="." instance=ExtResource( 17 )]
+[node name="Shelf_D" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1120, 770 )
 
-[node name="Shelf5" parent="." instance=ExtResource( 17 )]
+[node name="Shelf_E" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1110, 1050 )
 
-[node name="Shelf6" parent="." instance=ExtResource( 17 )]
+[node name="Shelf_F" parent="." instance=ExtResource( 17 )]
 position = Vector2( 1120, 1330.53 )
 
 [node name="Worker" parent="." instance=ExtResource( 18 )]
