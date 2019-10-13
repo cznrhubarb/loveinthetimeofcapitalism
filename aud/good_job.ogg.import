@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/good_job.ogg-e977e7a0742e40dfb4f60f88957b824f.oggstr"
+
+[deps]
+
+source_file="res://aud/good_job.ogg"
+dest_files=[ "res://.import/good_job.ogg-e977e7a0742e40dfb4f60f88957b824f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
