@@ -6,6 +6,7 @@ onready var anim_player = get_node("AnimationPlayer")
 onready var spr = get_node("Sprite")
 onready var inventory = get_tree().get_root().find_node("Inventory", true, false)
 onready var orders = get_tree().get_root().find_node("Slidedown Menu", true, false)
+onready var pickup_percentage = get_tree().get_root().find_node("PickupPercentage", true, false)
 
 var is_moving = false
 var step_sounds
@@ -53,6 +54,10 @@ func _physics_process(delta):
 	
 	if touching_bin != null and Input.is_action_pressed("pick_up"):
 		inventory_delay -= delta
+
+		# Show progress as player holds pick_up key
+		pickup_percentage.text = pickup_percentage_text_formatter(pick_up_time, inventory_delay)
+
 		if inventory_delay <= 0:
 			# You only get one for each time you hold it down
 			inventory_delay = 1000
@@ -61,6 +66,9 @@ func _physics_process(delta):
 			else:
 				get_node("Huh").play()
 	else:
+		# Reset progress if player stops touching bin,
+		# or if player stops pressing pick_up key
+		pickup_percentage.text = ""
 		inventory_delay = pick_up_time
 
 func do_i_need_this(item):
@@ -68,6 +76,35 @@ func do_i_need_this(item):
 		if order.type == item:
 			return true
 	return false
+
+# These animations are the equivalent of a fred flintstone car
+func pickup_percentage_text_formatter(pick_up_time, inventory_delay):
+	var percent = ((pick_up_time - inventory_delay) / pick_up_time)
+	if (percent > 0):
+		percent = floor(percent * 100)
+		if percent < 10:
+			return "|"
+		if percent < 20:
+			return "||"
+		if percent < 30:
+			return "|||"
+		if percent < 40:
+			return "||||"
+		if percent < 50:
+			return "|||||"
+		if percent < 60:
+			return "||||||"
+		if percent < 70:
+			return "|||||||"
+		if percent < 80:
+			return "||||||||"
+		if percent < 90:
+			return "|||||||||"
+		else:
+			return "||||||||||"
+	else:
+		return "||||||||||"
+	
 	
 	
 	
