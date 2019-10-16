@@ -1,5 +1,7 @@
 # loveinthetimeofcapitalism
 
+A 48 hour game jam project done in Godot.
+
 ## Asset Credits
 ### Art
  * [Kenney.nl, Platformer Art: Requests](https://kenney.nl/assets/platformer-art-requests)
